@@ -4,7 +4,7 @@ import sqlite3
 from datetime import datetime
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, resources={r"/*": {"origins": "https://ishantsharma04.github.io"}})
 
 DB_FILE = "finance.db"
 
@@ -321,3 +321,4 @@ if __name__ == '__main__':
     import os
     port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port, debug=True)
+
